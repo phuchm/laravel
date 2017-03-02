@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/api/employees/{id?}', 'Employees@index');
+Route::post('/api/employees', 'Employees@store');
+Route::post('/api/employees/{id}', 'Employees@update');
+Route::delete('/api/employees/{id}', 'Employees@destroy');
