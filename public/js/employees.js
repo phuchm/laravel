@@ -1,15 +1,20 @@
 var myApp = angular.module('employeeRecords', []);
 myApp.controller('employeesController', function($scope, $http) {
     // Retrieve employees listing from API
-    $http({
-        method : "GET",
-        url : "/api/employees"
-    }).then(function success(response) {
-        console.log("Employees: " + JSON.stringify(response));
-        $scope.employees = response.data;
-    }, function error(response) {
-        alert(response.statusText);
-    });
+    $scope.get = function() {
+        $http({
+            method : "GET",
+            url : "/get/employees"
+        }).then(function success(response) {
+            console.log("Employees: " + JSON.stringify(response));
+            $scope.employees = response.data;
+        }, function error(response) {
+            console.log("Error: " + JSON.stringify(response));
+            alert(response.statusText);
+        });
+    }
+
+    $scope.get();
 
     // Show modal form
     $scope.toggle = function(modalstate, id) {
@@ -22,27 +27,30 @@ myApp.controller('employeesController', function($scope, $http) {
             case 'edit':
                 $scope.form_title = "Employee Detail";
                 $scope.id = id;
-                $http.get('/api/employees/' + id)
+                $http.get('/read/employee/' + id)
                 .then(function success(response) {
-                    $scope.employee = response;
+                    console.log("Employees: " + JSON.stringify(response));
+                    $scope.employee = response.data;
+                    $('#myModal').modal('show');
                 }, function error(response) {
+                    console.log("Error: " + JSON.stringify(response));
+                    $('#myModal').modal('hide');
                     alert(response.statusText);
                 });
                 break;
             default:
                 break;
         }
-        console.log(id);
-        $('#myModal').modal('show');
     }
 
     // Save new record / update existing record
     $scope.save = function(modalstate, id) {
-        var url = "/api/employees";
+        $('#myModal').modal('hide');
+        var url = "/create/employee";
 
         //append employee id to the URL if the form is in edit mode
         if (modalstate === 'edit'){
-            url += "/" + id;
+            url = "/update/employee/" + id;
         }
 
         $http({
@@ -51,8 +59,10 @@ myApp.controller('employeesController', function($scope, $http) {
             data: $.param($scope.employee),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }).then(function success(response) {
-            location.reload();
+            console.log("Employees: " + JSON.stringify(response));
+            $scope.get();
         }, function error(response) {
+            console.log("Error: " + JSON.stringify(response));
             alert(response.statusText);
         });
     }
@@ -62,11 +72,13 @@ myApp.controller('employeesController', function($scope, $http) {
         var isConfirmDelete = confirm('Are you sure you want this record?');
         if (isConfirmDelete) {
             $http({
-                method: 'DELETE',
-                url: '/api/employees/' + id
+                method: 'POST',
+                url: '/delete/employee/' + id
             }).then(function success(response) {
-                location.reload();
+                console.log("Employees: " + JSON.stringify(response));
+                $scope.get();
             }, function error(response) {
+                console.log("Error: " + JSON.stringify(response));
                 alert(response.statusText);
             });
         } else {

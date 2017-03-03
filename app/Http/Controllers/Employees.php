@@ -8,26 +8,40 @@ use App\Http\Controllers\Controller;
 
 class Employees extends Controller
 {
+    /**
+     * Get all records in database.
+     *
+     * @return Response
+     */
+    public function get(Request $request) {
+        $employees = Employee::all();
+        // \Log::debug($employees);
+        return response()->json($employees);
+    }
 /**
- * Display a listing of the resource.
+ * Read a record.
  *
  * @return Response
  */
-public function index($id = null) {
+public function read($id = null) {
     if ($id == null) {
-        return Employee::orderBy('id', 'asc')->get();
+        return response()->json(['message' => 'Id is invalid!'], 400);
     } else {
-        return $this->show($id);
+        $employee = $this->show($id);
+        if ($employee == null) {
+            return response()->json(['message' => 'Not found!'], 404);
+        }
+        return response()->json($employee);
     }
 }
 
 /**
- * Store a newly created resource in storage.
+ * Create a newly record in database.
  *
  * @param  Request  $request
  * @return Response
  */
-public function store(Request $request) {
+public function create(Request $request) {
     $employee = new Employee;
 
     $employee->name = $request->input('name');
@@ -36,11 +50,11 @@ public function store(Request $request) {
     $employee->position = $request->input('position');
     $employee->save();
 
-    return 'Employee record successfully created with id ' . $employee->id;
+    $this->get($request);
 }
 
 /**
- * Display the specified resource.
+ * Find a record.
  *
  * @param  int  $id
  * @return Response
@@ -50,7 +64,7 @@ public function show($id) {
 }
 
 /**
- * Update the specified resource in storage.
+ * Update a record.
  *
  * @param  Request  $request
  * @param  int  $id
@@ -58,6 +72,9 @@ public function show($id) {
  */
 public function update(Request $request, $id) {
     $employee = Employee::find($id);
+    if ($employee == null) {
+        return response()->json(['message' => 'Not found!'], 404);
+    }
 
     $employee->name = $request->input('name');
     $employee->email = $request->input('email');
@@ -65,20 +82,23 @@ public function update(Request $request, $id) {
     $employee->position = $request->input('position');
     $employee->save();
 
-    return "Sucess updating user #" . $employee->id;
+    $this->get($request);
 }
 
 /**
- * Remove the specified resource from storage.
+ * Delete a record
  *
  * @param  int  $id
  * @return Response
  */
-public function destroy(Request $request) {
-    $employee = Employee::find($request->input('id'));
+public function delete(Request $request, $id) {
+    $employee = Employee::find($id);
+    if ($employee == null) {
+        return response()->json(['message' => 'Not found!'], 404);
+    }
 
-    $employee->delete();
+    Employee::destroy($id);
 
-    return "Employee record successfully deleted #" . $request->input('id');
+    $this->get($request);
 }
 }
