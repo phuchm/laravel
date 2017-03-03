@@ -18,6 +18,10 @@
                 background-color: #fff;
             }
 
+            .container {
+                padding-top: 50px;
+            }
+
             .full-height {
                 height: 100vh;
             }
@@ -71,39 +75,32 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Laravel</a>
+                    <a class="navbar-brand" href="/">Laravel</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/">About</a></li>
+                        <li><a href="/">Contact</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Language <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Nav header</li>
-                                <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
+                                <li><a href="/">English</a></li>
+                                <li><a href="/">Vietnamese</a></li>
+                                <li><a href="/">Japanese</a></li>
                             </ul>
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                    <!--
-                        <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
-                        <li><a href="../navbar-static-top/">Static top</a></li>
-                        <li><a href="../navbar-fixed-top/">Fixed top</a></li>
-                    -->
+                        <li><a href="/">Sign in</a></li>
+                        <li><a href="/">Sign up</a></li>
                     </ul>
                 </div> <!--/.nav-collapse -->
             </div> <!--/.container-fluid -->
         </nav>
 
-        <h2>Employees Database</h2>
-        <div  ng-controller="employeesController">
+        <div ng-controller="employeesController" class="container">
+            <h2>Employees Database</h2>
 
             <!-- Table-to-load-the-data Part -->
             <table class="table">

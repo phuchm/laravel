@@ -75,6 +75,7 @@ myApp.controller('employeesController', function($scope, $http) {
                 url: '/delete/employee/' + id
             }).then(function success(response) {
                 console.log("Employees: " + JSON.stringify(response));
+                $scope.employee = {};
                 $scope.get();
             }, function error(response) {
                 console.log("Error: " + JSON.stringify(response));

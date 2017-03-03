@@ -29,6 +29,12 @@
         Schema::drop('examples');
     }
     b. To migrate: php artisan migrate
+    c. Prevent SQL Injection
+        => Using Laravel Raw Queries. For Ex:
+            $someVariable = Input::get("some_variable");
+            $results = DB::select( DB::raw("SELECT * FROM some_table WHERE some_col = :somevariable"), array(
+                'somevariable' => $someVariable,
+            ));
 
 - Create a controller:
     php artisan make:controller Examples
