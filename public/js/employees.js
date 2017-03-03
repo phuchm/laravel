@@ -1,4 +1,7 @@
-var myApp = angular.module('employeeRecords', []);
+var myApp = angular.module('employeeRecords', [], function($interpolateProvider) {
+    $interpolateProvider.startSymbol('<%');
+    $interpolateProvider.endSymbol('%>');
+});
 myApp.controller('employeesController', function($scope, $http) {
     // Retrieve employees listing from API
     $scope.get = function() {

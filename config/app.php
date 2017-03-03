@@ -92,6 +92,16 @@ return [
 
     'fallback_locale' => 'en',
 
+    /**
+     * List of alternative languages (not including the one specified as 'locale')
+     */
+    'alt_langs' => array ('en', 'vi'),
+
+    /**
+     *  Prefix of selected locale  - leave empty (set in runtime)
+     */
+    'locale_prefix' => '',
+
     /*
     |--------------------------------------------------------------------------
     | Encryption Key
