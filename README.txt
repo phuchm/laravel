@@ -74,3 +74,10 @@ c. Using Laravel Debugbar
 - Unit Test:
 a. To create a Test file: php artisan make:test ExampleTest
 b. To run UT: ./vendor/bin/phpunit
+
+- Note: Resolve conflict between AngularJS and Blade
+=> Use $interpolateProvider to change syntax when using variables:
+var myApp = angular.module('your_app', [], function($interpolateProvider) {
+    $interpolateProvider.startSymbol('<%');
+    $interpolateProvider.endSymbol('%>');
+});
