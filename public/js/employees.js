@@ -19,7 +19,7 @@ myApp.controller('employeesController', function($scope, $http) {
     // Show modal form
     $scope.toggle = function(modalstate, id) {
         $scope.modalstate = modalstate;
-
+        $('#myModal').modal('show');
         switch (modalstate) {
             case 'add':
                 $scope.form_title = "Add New Employee";
@@ -31,7 +31,6 @@ myApp.controller('employeesController', function($scope, $http) {
                 .then(function success(response) {
                     console.log("Employees: " + JSON.stringify(response));
                     $scope.employee = response.data;
-                    $('#myModal').modal('show');
                 }, function error(response) {
                     console.log("Error: " + JSON.stringify(response));
                     $('#myModal').modal('hide');

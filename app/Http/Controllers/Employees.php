@@ -8,16 +8,16 @@ use App\Http\Controllers\Controller;
 
 class Employees extends Controller
 {
-    /**
-     * Get all records in database.
-     *
-     * @return Response
-     */
-    public function get(Request $request) {
-        $employees = Employee::all();
-        // \Log::debug($employees);
-        return response()->json($employees);
-    }
+/**
+ * Get all records in database.
+ *
+ * @return Response
+ */
+public function get(Request $request) {
+    $employees = Employee::all();
+    // \Log::debug($employees);
+    return response()->json($employees);
+}
 /**
  * Read a record.
  *
@@ -26,13 +26,14 @@ class Employees extends Controller
 public function read($id = null) {
     if ($id == null) {
         return response()->json(['message' => 'Id is invalid!'], 400);
-    } else {
-        $employee = $this->show($id);
-        if ($employee == null) {
-            return response()->json(['message' => 'Not found!'], 404);
-        }
-        return response()->json($employee);
     }
+
+    $employee = $this->show($id);
+    if ($employee == null) {
+        return response()->json(['message' => 'Not found!'], 404);
+    }
+
+    return response()->json($employee);
 }
 
 /**
@@ -71,6 +72,10 @@ public function show($id) {
  * @return Response
  */
 public function update(Request $request, $id) {
+    if ($id == null) {
+        return response()->json(['message' => 'Id is invalid!'], 404);
+    }
+
     $employee = Employee::find($id);
     if ($employee == null) {
         return response()->json(['message' => 'Not found!'], 404);
@@ -92,12 +97,16 @@ public function update(Request $request, $id) {
  * @return Response
  */
 public function delete(Request $request, $id) {
+    if ($id == null) {
+        return response()->json(['message' => 'Id is invalid!'], 404);
+    }
+
     $employee = Employee::find($id);
     if ($employee == null) {
         return response()->json(['message' => 'Not found!'], 404);
     }
 
-    Employee::destroy($id);
+    $employee->delete();
 
     $this->get($request);
 }
