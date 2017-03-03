@@ -64,3 +64,7 @@ c. Using Laravel Debugbar
             ...
             'Debugbar'  => Barryvdh\Debugbar\Facade::class,
         ]
+
+- Unit Test:
+a. To create a Test file: php artisan make:test ExampleTest
+b. To run UT: ./vendor/bin/phpunit
