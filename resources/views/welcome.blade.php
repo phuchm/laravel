@@ -12,58 +12,7 @@
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <script src="js/angular.min.js" type="text/javascript"></script>
         <script src="js/employees.js" type="text/javascript"></script>
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-            }
-
-            .container {
-                padding-top: 50px;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
+        <link href="css/main.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <nav class="navbar navbar-default navbar-fixed-top">
@@ -99,6 +48,7 @@
         </nav>
 
         <div ng-controller="employeesController" class="container">
+            <div id="main">
             <h2>Employees Database</h2>
 
             <!-- Table-to-load-the-data Part -->
@@ -133,7 +83,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">�</span></button>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                             <h4 class="modal-title" id="myModalLabel"><% form_title %></h4>
                         </div>
                         <div class="modal-body">
@@ -186,6 +136,14 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div id="footer">
+                CÔNG TY <b>Sợ vợ toàn tập</b>. Số nhà Thiên đường thứ 2, Phường Cống Vị, Quận Ba Đình, Tp Hà Nội
+                <br>
+                Điện thoại: Vợ giữ tiền rồi làm gì có tiền mà mua điện thoại
+                <br>
+                Ghi nhớ: <b>Vợ là thanh niên cứng, tôi là thanh niên nửa cứng nửa mềm</b> do Vợ cấp từ ngày cưới
+            </div>
             </div>
         </div>
     </body>
