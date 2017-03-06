@@ -14,8 +14,12 @@ myApp.controller('employeesController', function($scope, $http) {
             $("#overlay-layer").hide();
             $scope.employees = response.data;
         }, function error(response) {
-            // console.log("Error: " + JSON.stringify(response));
+            // console.log("Employees: " + JSON.stringify(response));
             $("#overlay-layer").hide();
+            if (response.data.message) {
+                alert(JSON.stringify(response.data.message));
+                return;
+            }
             alert(response.statusText);
         });
     }
@@ -55,6 +59,10 @@ myApp.controller('employeesController', function($scope, $http) {
                     $('#myModal').modal('hide');
                     $("#overlay-layer").hide();
                     $scope.employee = {};
+                    if (response.data.message) {
+                        alert(JSON.stringify(response.data.message));
+                        return;
+                    }
                     alert(response.statusText);
                 });
                 break;
@@ -87,6 +95,10 @@ myApp.controller('employeesController', function($scope, $http) {
             // console.log("Error: " + JSON.stringify(response));
             $("#overlay-layer").hide();
             $scope.employee = {};
+            if (response.data.message) {
+                alert(JSON.stringify(response.data.message));
+                return;
+            }
             alert(response.statusText);
         });
     }
@@ -108,6 +120,10 @@ myApp.controller('employeesController', function($scope, $http) {
                 // console.log("Error: " + JSON.stringify(response));
                 $("#overlay-layer").hide();
                 $scope.employee = {};
+                if (response.data.message) {
+                    alert(JSON.stringify(response.data.message));
+                    return;
+                }
                 alert(response.statusText);
             });
         } else {
