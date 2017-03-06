@@ -53,7 +53,7 @@
             <h2>Employees Database</h2>
 
             <!-- Table-to-load-the-data Part -->
-            <table class="table">
+            <table class="table table-responsive table-hover">
                 <thead>
                     <tr>
                         <th>ID</th>
