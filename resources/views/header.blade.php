@@ -6,12 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+
         <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <script src="js/angular.min.js" type="text/javascript"></script>
         <script src="js/employees.js" type="text/javascript"></script>
+
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
         <link href="css/main.css" rel="stylesheet" type="text/css">
     </head>
     <body>
@@ -41,8 +43,8 @@
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/">{{ trans('content.SignIn') }}</a></li>
-                        <li><a href="/">{{ trans('content.SignUp') }}</a></li>
+                        <li><a href="" data-toggle="modal" data-target="#myLogin">{{ trans('content.SignIn') }}</a></li>
+                        <li><a href="" data-toggle="modal" data-target="#mySignup">{{ trans('content.SignUp') }}</a></li>
                     </ul>
                 </div> <!--/.nav-collapse -->
             </div> <!--/.container-fluid -->

@@ -1,3 +1,7 @@
+@font-face {
+    src: url(../fonts/glyphicons-halflings-regular.eot);
+}
+
 html, body {
     background-color: #fff;
 }

@@ -90,6 +90,12 @@
                     </div>
                 </div>
             </div>
+            <div class="modal fade" id="myLogin" tabindex="-1" role="dialog" aria-labelledby="myLoginLabel" aria-hidden="true">
+                @include('login')
+            </div>
+            <div class="modal fade" id="mySignup" tabindex="-1" role="dialog" aria-labelledby="mySignupLabel" aria-hidden="true">
+                @include('signup')
+            </div>
             <div id="footer">
                 CÔNG TY <b>Sợ vợ toàn tập</b>. Số nhà Thiên đường thứ 2, Phường Cống Vị, Quận Ba Đình, Tp Hà Nội
                 <br>
