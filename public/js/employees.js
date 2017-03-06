@@ -10,11 +10,11 @@ myApp.controller('employeesController', function($scope, $http) {
             method : "GET",
             url : "/get/employees"
         }).then(function success(response) {
-            console.log("Employees: " + JSON.stringify(response));
+            // console.log("Employees: " + JSON.stringify(response));
             $("#overlay-layer").hide();
             $scope.employees = response.data;
         }, function error(response) {
-            console.log("Error: " + JSON.stringify(response));
+            // console.log("Error: " + JSON.stringify(response));
             $("#overlay-layer").hide();
             alert(response.statusText);
         });
@@ -43,13 +43,18 @@ myApp.controller('employeesController', function($scope, $http) {
             case 'edit':
                 $scope.form_title = "Employee Detail";
                 $scope.id = id;
+                $("#overlay-layer").show();
                 $http.get('/read/employee/' + id)
                 .then(function success(response) {
-                    console.log("Employees: " + JSON.stringify(response));
+                    // console.log("Employees: " + JSON.stringify(response));
+                    $("#overlay-layer").hide();
+                    $scope.employee = {};
                     $scope.employee = response.data;
                 }, function error(response) {
-                    console.log("Error: " + JSON.stringify(response));
+                    // console.log("Error: " + JSON.stringify(response));
                     $('#myModal').modal('hide');
+                    $("#overlay-layer").hide();
+                    $scope.employee = {};
                     alert(response.statusText);
                 });
                 break;
@@ -74,12 +79,14 @@ myApp.controller('employeesController', function($scope, $http) {
             data: $.param($scope.employee),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }).then(function success(response) {
-            console.log("Employees: " + JSON.stringify(response));
+            // console.log("Employees: " + JSON.stringify(response));
             $("#overlay-layer").hide();
+            $scope.employee = {};
             $scope.get();
         }, function error(response) {
-            console.log("Error: " + JSON.stringify(response));
+            // console.log("Error: " + JSON.stringify(response));
             $("#overlay-layer").hide();
+            $scope.employee = {};
             alert(response.statusText);
         });
     }
@@ -93,13 +100,14 @@ myApp.controller('employeesController', function($scope, $http) {
                 method: 'POST',
                 url: '/delete/employee/' + id
             }).then(function success(response) {
-                console.log("Employees: " + JSON.stringify(response));
+                // console.log("Employees: " + JSON.stringify(response));
                 $("#overlay-layer").hide();
                 $scope.employee = {};
                 $scope.get();
             }, function error(response) {
-                console.log("Error: " + JSON.stringify(response));
+                // console.log("Error: " + JSON.stringify(response));
                 $("#overlay-layer").hide();
+                $scope.employee = {};
                 alert(response.statusText);
             });
         } else {
