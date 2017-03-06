@@ -5,14 +5,17 @@ var myApp = angular.module('employeeRecords', [], function($interpolateProvider)
 myApp.controller('employeesController', function($scope, $http) {
     // Retrieve employees listing from API
     $scope.get = function() {
+        $("#overlay-layer").show();
         $http({
             method : "GET",
             url : "/get/employees"
         }).then(function success(response) {
             console.log("Employees: " + JSON.stringify(response));
+            $("#overlay-layer").hide();
             $scope.employees = response.data;
         }, function error(response) {
             console.log("Error: " + JSON.stringify(response));
+            $("#overlay-layer").hide();
             alert(response.statusText);
         });
     }
@@ -54,7 +57,7 @@ myApp.controller('employeesController', function($scope, $http) {
         if (modalstate === 'edit'){
             url = "/update/employee/" + id;
         }
-
+        $("#overlay-layer").show();
         $http({
             method: 'POST',
             url: url,
@@ -62,9 +65,11 @@ myApp.controller('employeesController', function($scope, $http) {
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }).then(function success(response) {
             console.log("Employees: " + JSON.stringify(response));
+            $("#overlay-layer").hide();
             $scope.get();
         }, function error(response) {
             console.log("Error: " + JSON.stringify(response));
+            $("#overlay-layer").hide();
             alert(response.statusText);
         });
     }
@@ -73,15 +78,18 @@ myApp.controller('employeesController', function($scope, $http) {
     $scope.confirmDelete = function(id) {
         var isConfirmDelete = confirm('Are you sure you want this record?');
         if (isConfirmDelete) {
+            $("#overlay-layer").show();
             $http({
                 method: 'POST',
                 url: '/delete/employee/' + id
             }).then(function success(response) {
                 console.log("Employees: " + JSON.stringify(response));
+                $("#overlay-layer").hide();
                 $scope.employee = {};
                 $scope.get();
             }, function error(response) {
                 console.log("Error: " + JSON.stringify(response));
+                $("#overlay-layer").hide();
                 alert(response.statusText);
             });
         } else {

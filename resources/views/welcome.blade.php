@@ -15,6 +15,7 @@
         <link href="css/main.css" rel="stylesheet" type="text/css">
     </head>
     <body>
+        <div id="overlay-layer" style="display: none;"></div>
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
