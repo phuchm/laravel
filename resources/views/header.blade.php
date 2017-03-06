@@ -10,11 +10,14 @@
         <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <script src="js/angular.min.js" type="text/javascript"></script>
+        <!-- <script src="js/api.js" type="text/javascript"></script> -->
+        <script src="js/angular-recaptcha.js" type="text/javascript"></script>
         <script src="js/employees.js" type="text/javascript"></script>
 
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
         <link href="css/main.css" rel="stylesheet" type="text/css">
+
     </head>
     <body>
         <div id="overlay-layer" style="display: none;"></div>
