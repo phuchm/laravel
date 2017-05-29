@@ -2,9 +2,9 @@
 - Install php modules:
     sudo apt-get install php7.0-cli php-mbstring php-dom
 
-- Install nodejs and npm
-    sudo apt-get install nodejs
-    sudo apt-get install npm
+- Install nodejs
+    curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+    sudo apt-get install -y nodejs
 
 - Run this in your terminal to get the latest Composer version:
     +) Download the installer to the current directory:
