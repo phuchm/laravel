@@ -1,5 +1,23 @@
+- Run this in your terminal to get the latest Composer version:
+    +) Download the installer to the current directory:
+        php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+    +) Verify the installer SHA-384:
+        php -r "if (hash_file('SHA384', 'composer-setup.php') === '669656bab3166a7aff8a7506b8cb2d1c292f042046c5a994c43155c0be6190fa0355160742ab2e1c88d40d5be660b410') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+    +) Run the installer to install to current directory:
+        php composer-setup.php
+    +) Remove the installer:
+        php -r "unlink('composer-setup.php');"
+    +) After the Composer is installed, check the installation by command line:
+        ./composer.phar
+
 - How to create a new project:
-    composer create-project laravel/laravel --prefer-dist
+    ./composer.phar create-project laravel/laravel name-of-your-project --prefer-dist
+
+- Install php modules:
+    sudo apt-get install php-mbstring php-dom
+
+- Install all dependencies
+    ./composer.phar install
 
 - Run project:
     php artisan serve
