@@ -13,11 +13,14 @@
     +) After the Composer is installed, check the installation by command line:
         ./composer.phar
 
+- Link composer to use everywhere:
+    sudo mv composer.phar /usr/bin/composer
+
 - How to create a new project:
-    ./composer.phar create-project laravel/laravel name-of-your-project --prefer-dist
+    composer create-project laravel/laravel name-of-your-project --prefer-dist
 
 - Install all dependencies
-    ./composer.phar install
+    composer install
 
 - Run project:
     php artisan serve
