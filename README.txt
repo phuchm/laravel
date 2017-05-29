@@ -1,5 +1,10 @@
+* Note: Current OS: Ubuntu 16.0x.1 64bit LTS
 - Install php modules:
     sudo apt-get install php7.0-cli php-mbstring php-dom
+
+- Install nodejs and npm
+    sudo apt-get install nodejs
+    sudo apt-get install npm
 
 - Run this in your terminal to get the latest Composer version:
     +) Download the installer to the current directory:
