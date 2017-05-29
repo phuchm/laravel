@@ -1,3 +1,6 @@
+- Install php modules:
+    sudo apt-get install php7.0-cli php-mbstring php-dom
+
 - Run this in your terminal to get the latest Composer version:
     +) Download the installer to the current directory:
         php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -12,9 +15,6 @@
 
 - How to create a new project:
     ./composer.phar create-project laravel/laravel name-of-your-project --prefer-dist
-
-- Install php modules:
-    sudo apt-get install php-mbstring php-dom
 
 - Install all dependencies
     ./composer.phar install
