@@ -33,6 +33,10 @@ And then run again: php artisan serve
 - Stop maintenance mode:
     php artisan up
 
+- Config database:
+    +) Update DB_DATABASE, DB_USERNAME and DB_PASSWORD in .env file
+    +) Select mysql engine: sqlite, mysql, pgsql, ... in "connections" tag and then update database username, password in config/database.php file
+
 - Create a table in database:
     php artisan make:migration create_examples_table
     a. Create attributes for ORM (in file "create_examples_table.php" of folder "database/migrations"):
