@@ -14,6 +14,10 @@
 - Run this in your terminal to get the latest Composer version:
     +) Download the installer to the current directory:
         php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+    If you get an errors:
+        PHP Warning:  copy(): php_network_getaddresses: getaddrinfo failed: No address associated with hostname in Command line code on line 1
+        PHP Warning:  copy(https://getcomposer.org/installer): failed to open stream: php_network_getaddresses: getaddrinfo failed: No address associated with hostname in Command line code on line 1
+    Please ignore this step and move on the next step with local file: ref/composer-setup.php
     +) Verify the installer SHA-384:
         php -r "if (hash_file('SHA384', 'composer-setup.php') === '669656bab3166a7aff8a7506b8cb2d1c292f042046c5a994c43155c0be6190fa0355160742ab2e1c88d40d5be660b410') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
     +) Run the installer to install to current directory:
