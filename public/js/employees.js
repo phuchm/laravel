@@ -1,8 +1,4 @@
-var myApp = angular.module('employeeRecords', ['vcRecaptcha'], function($interpolateProvider) {
-    $interpolateProvider.startSymbol('<%');
-    $interpolateProvider.endSymbol('%>');
-});
-myApp.controller('employeesController', function($scope, $http, vcRecaptchaService) {
+myApp.controller('employeeController', function($scope, $http, vcRecaptchaService) {
     $scope.response = null;
     $scope.widgetId = null;
     $scope.model = {
@@ -169,3 +165,15 @@ myApp.controller('employeesController', function($scope, $http, vcRecaptchaServi
         }
     };
 });
+/*
+.controller('loginController', function($scope, $http) {
+    $scope.login = {
+        username: '',
+        password: ''
+    };
+
+    $scope.signIn = function() {
+        console.log("username: " + $scope.login.username);
+        console.log("password: " + $scope.login.password);
+    };
+});*/

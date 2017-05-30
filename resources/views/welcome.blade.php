@@ -1,6 +1,6 @@
 @include('header')
 
-        <div ng-controller="employeesController" class="container">
+        <div ng-controller="employeeController" class="container">
             <div id="main">
             <h2>Employees Database</h2>
 

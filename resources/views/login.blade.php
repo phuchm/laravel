@@ -1,4 +1,4 @@
-<div id="loginbox" style="margin-top:50px; width: 30%; margin-left: 35%;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+<div ng-app="loginRecord" ng-controller="loginController" id="loginbox" style="margin-top:50px; width: 30%; margin-left: 35%;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
     <div class="panel panel-info" >
         <div class="panel-heading">
             <div class="panel-title">{{ trans('content.SignIn') }}</div>
@@ -16,12 +16,12 @@
 
                 <div style="margin-bottom: 25px" class="input-group">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                    <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="{{ trans('content.Username or email') }}">
+                    <input id="login-username" type="text" class="form-control" name="username" ng-model="login.username" placeholder="{{ trans('content.Username or email') }}">
                 </div>
     
                 <div style="margin-bottom: 25px" class="input-group">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                    <input id="login-password" type="password" class="form-control" name="password" placeholder="{{ trans('content.Password') }}">
+                    <input id="login-password" type="password" class="form-control" name="password" ng-model="login.password" placeholder="{{ trans('content.Password') }}">
                 </div>
     
                 <div class="input-group">
@@ -35,7 +35,7 @@
                 <div style="margin-top:10px" class="form-group">
                     <!-- Button -->
                     <div class="col-sm-12 controls">
-                        <a id="btn-login" href="#" class="btn btn-success">{{ trans('content.Login') }}</a>
+                        <a id="btn-login" href="#" class="btn btn-success" ng-click="signIn()">{{ trans('content.Login') }}</a>
                         <a id="btn-fblogin" href="#" class="btn btn-primary">{{ trans('content.Login with Facebook') }}</a>
                     </div>
                 </div>
