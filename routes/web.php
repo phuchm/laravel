@@ -11,6 +11,12 @@
 |
 */
 
+// Need to defined before welcome page. If not, we can't redirect to this page
+Route::get('/other_page', function () {
+    app()->setLocale('en');
+    return view('other_page');
+});
+
 Route::get('/', function () {
     app()->setLocale('en');
     return view('welcome');

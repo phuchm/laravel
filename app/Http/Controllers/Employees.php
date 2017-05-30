@@ -19,6 +19,7 @@ public function get(Request $request) {
     // \Log::debug($employees);
     return response()->json($employees);
 }
+
 /**
  * Read a record.
  *
