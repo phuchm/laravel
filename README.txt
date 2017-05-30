@@ -2,9 +2,14 @@
 - Install php modules:
     sudo apt-get install php7.0-cli php-mbstring php-dom
 
-- Install nodejs
+- Install nodejs:
     curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
     sudo apt-get install -y nodejs
+
+- Upgrade node:
+    wget https://nodejs.org/dist/v7.9.0/node-v7.9.0-linux-x64.tar.xz
+    sudo apt-get install xz-utils
+    sudo tar -C /usr --strip-components 1 -xJf node-v7.9.0-linux-x64.tar.xz
 
 - Run this in your terminal to get the latest Composer version:
     +) Download the installer to the current directory:
