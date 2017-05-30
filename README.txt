@@ -42,6 +42,8 @@ And then run again: php artisan serve
     php artisan up
 
 - Config database:
+    +) Create database:
+        CREATE DATABASE test CHARACTER SET utf8 COLLATE utf8_general_ci;
     +) Update DB_DATABASE, DB_USERNAME and DB_PASSWORD in .env file
     +) Select mysql engine: sqlite, mysql, pgsql, ... in "connections" tag and then update database username, password in config/database.php file
 
@@ -64,6 +66,8 @@ And then run again: php artisan serve
         Schema::drop('examples');
     }
     b. To migrate: php artisan migrate
+    If you get an error: could not find driver, please install php-mysql:
+        sudo apt-get install php-mysql
     c. Prevent SQL Injection
         => Using Laravel Raw Queries. For Ex:
             $someVariable = Input::get("some_variable");
