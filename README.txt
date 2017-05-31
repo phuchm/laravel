@@ -33,8 +33,20 @@
 - How to create a new project:
     composer create-project laravel/laravel name-of-your-project --prefer-dist
 
-- Install all dependencies
+- Install all dependencies:
     composer install
+
+- Config LDAP:
+    sudo apt-get install php7.0-ldap
+    sudo apt-get install apache2
+    sudo /etc/init.d/apache2 restart
+
+- Send email in project:
+    +) Config MAIL_HOST, MAIL_USERNAME and MAIL_PASSWORD in .env file
+    +) Also, config the same attributes in config/mail.php
+    +) Clear your config
+        php artisan config:cache
+    +) Restart server
 
 - Run project:
     php artisan serve

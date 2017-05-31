@@ -16,8 +16,10 @@
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <script src="js/myApp.js" type="text/javascript"></script>
         <script src="js/employees.js" type="text/javascript"></script>
-        <script src="js/login.js" type="text/javascript"></script>
-
+        <!--<script src="js/login.js" type="text/javascript"></script>
+        <script src="js/password.js" type="text/javascript"></script>
+        <script src="js/signup.js" type="text/javascript"></script>
+        -->
     </head>
     <body>
         <div id="overlay-layer" style="display: none;"></div>
@@ -46,8 +48,8 @@
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="" data-toggle="modal" data-target="#myLogin">{{ trans('content.SignIn') }}</a></li>
-                        <li><a href="" data-toggle="modal" data-target="#mySignup">{{ trans('content.SignUp') }}</a></li>
+                        <li><a data-toggle="modal" data-target="#myLogin" data-dismiss="modal">{{ trans('content.SignIn') }}</a></li>
+                        <li><a data-toggle="modal" data-target="#mySignup" data-dismiss="modal">{{ trans('content.SignUp') }}</a></li>
                     </ul>
                 </div> <!--/.nav-collapse -->
             </div> <!--/.container-fluid -->

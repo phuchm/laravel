@@ -192,6 +192,11 @@ return [
          */
         Barryvdh\Debugbar\ServiceProvider::class,
 
+        /*
+         * LDAP
+         */
+        Adldap\Laravel\AdldapServiceProvider::class,
+
     ],
 
     /*
@@ -241,6 +246,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Debugbar'  => Barryvdh\Debugbar\Facade::class,
+        'Adldap' => Adldap\Laravel\Facades\Adldap::class
 
     ],
 

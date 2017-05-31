@@ -98,3 +98,7 @@ table {
     padding-bottom: 10px;
     background: url(../images/bg-wrap.png) top center repeat-y;
 }
+
+a {
+    cursor: pointer;
+}

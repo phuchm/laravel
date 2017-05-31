@@ -89,10 +89,10 @@
                     </div>
                 </div>
             </div>
-            <div class="modal fade" id="myLogin" tabindex="-1" role="dialog" aria-labelledby="myLoginLabel" aria-hidden="true">
+            <div class="modal fade" id="myLogin" tabindex="-1">
                 @include('login')
             </div>
-            <div class="modal fade" id="mySignup" tabindex="-1" role="dialog" aria-labelledby="mySignupLabel" aria-hidden="true">
+            <div class="modal fade" id="mySignup" tabindex="-1">
                 @include('signup')
             </div>
             <div id="footer">

@@ -1,8 +1,13 @@
-<div ng-app="loginRecord" ng-controller="loginController" id="loginbox" style="margin-top:50px; width: 30%; margin-left: 35%;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+<div id="loginbox" style="margin-top:50px; width: 30%; margin-left: 35%;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
     <div class="panel panel-info" >
         <div class="panel-heading">
             <div class="panel-title">{{ trans('content.SignIn') }}</div>
-            <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">{{ trans('content.Forgot password?') }}</a></div>
+            <div style="float:right; font-size: 80%; position: relative; top:-10px">
+                <a data-toggle="modal" data-target="#myPassword" data-dismiss="modal">{{ trans('content.Forgot password?') }}</a>
+                <div class="modal fade" id="myPassword" tabindex="-1">
+                    @include('pwd')
+                </div>
+            </div>
         </div>
 
         <div style="padding-top:30px" class="panel-body" >
@@ -35,8 +40,8 @@
                 <div style="margin-top:10px" class="form-group">
                     <!-- Button -->
                     <div class="col-sm-12 controls">
-                        <a id="btn-login" href="#" class="btn btn-success" ng-click="signIn()">{{ trans('content.Login') }}</a>
-                        <a id="btn-fblogin" href="#" class="btn btn-primary">{{ trans('content.Login with Facebook') }}</a>
+                        <a id="btn-login" href="" class="btn btn-success" ng-click="signIn()">{{ trans('content.Login') }}</a>
+                        <a id="btn-fblogin" href="" class="btn btn-primary">{{ trans('content.Login with Facebook') }}</a>
                     </div>
                 </div>
     
@@ -44,7 +49,7 @@
                     <div class="col-md-12 control">
                         <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
                             {{ trans('content.Don\'t have an account!') }}
-                            <a href="" ng-click="signUp()">
+                            <a data-toggle="modal" data-target="#mySignup" data-dismiss="modal">
                             {{ trans('content.Sign Up here') }}
                             </a>
                         </div>

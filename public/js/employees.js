@@ -23,16 +23,6 @@ myApp.controller('employeeController', function($scope, $http) {
 
     // $scope.get();
 
-    $scope.signUp = function() {
-        $('#myLogin').modal('hide');
-        $('#mySignup').modal('show');
-    };
-
-    $scope.logIn = function() {
-        $('#mySignup').modal('hide');
-        $('#myLogin').modal('show');
-    };
-
     // Show modal form
     $scope.toggle = function(modalstate, id) {
         $scope.modalstate = modalstate;

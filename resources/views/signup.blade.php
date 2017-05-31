@@ -3,7 +3,7 @@
         <div class="panel-heading">
             <div class="panel-title">{{ trans('content.SignUp') }}</div>
             <div style="float:right; font-size: 85%; position: relative; top:-10px">
-                <a id="signinlink" href="" ng-click="logIn()">{{ trans('content.SignIn') }}</a>
+                <a data-toggle="modal" data-target="#myLogin" data-dismiss="modal">{{ trans('content.SignIn') }}</a>
             </div>
         </div>
 
