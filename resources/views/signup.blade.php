@@ -1,15 +1,15 @@
-<div id="signupbox" style="margin-top:50px; width: 30%; margin-left: 35%;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+<div id="signupbox" style="margin-top: 50px; width: 30%; margin-left: 35%;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
     <div class="panel panel-info">
         <div class="panel-heading">
             <div class="panel-title">{{ trans('content.SignUp') }}</div>
-            <div style="float:right; font-size: 85%; position: relative; top:-10px">
+            <div style="float: right; font-size: 85%; position: relative; top: -10px">
                 <a data-toggle="modal" data-target="#myLogin" data-dismiss="modal">{{ trans('content.SignIn') }}</a>
             </div>
         </div>
 
         <div class="panel-body" >
             <form id="signupform" class="form-horizontal" role="form">
-                <div id="signupalert" style="display:none" class="alert alert-danger">
+                <div id="signupalert" style="display: none;" class="alert alert-danger">
                     <p>{{ trans('content.Error') }}:</p>
                     <span></span>
                 </div>
@@ -53,11 +53,11 @@
                     <!-- Button -->
                     <div class="col-md-offset-3 col-md-9">
                         <button id="btn-signup" type="button" class="btn btn-info" ng-click="submit()"><i class="icon-hand-right"></i> &nbsp; {{ trans('content.SignUp') }}</button>
-                        <span style="margin-left:8px;">{{ trans('content.Or') }}</span>
+                        <span style="margin-left: 8px;">{{ trans('content.Or') }}</span>
                     </div>
                 </div>
 
-                <div style="border-top: 1px solid #999; padding-top:20px"  class="form-group">
+                <div style="border-top: 1px solid #999; padding-top: 20px"  class="form-group">
                     <div class="col-md-offset-3 col-md-9">
                         <button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>   {{ trans('content.Sign Up with Facebook') }}</button>
                     </div>

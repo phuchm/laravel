@@ -2,19 +2,16 @@
     <div class="panel panel-info" >
         <div class="panel-heading">
             <div class="panel-title">{{ trans('content.SignIn') }}</div>
-            <div style="float:right; font-size: 80%; position: relative; top:-10px">
+            <div style="float:right; font-size: 80%; position: relative; top: -10px">
                 <a data-toggle="modal" data-target="#myPassword" data-dismiss="modal">{{ trans('content.Forgot password?') }}</a>
-                <div class="modal fade" id="myPassword" tabindex="-1">
-                    @include('pwd')
-                </div>
             </div>
         </div>
 
-        <div style="padding-top:30px" class="panel-body" >
-            <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+        <div style="padding-top: 30px" class="panel-body" >
+            <div style="display: none;" id="login-alert" class="alert alert-danger col-sm-12"></div>
 
             <form id="loginform" class="form-horizontal" role="form">
-                <div id="signupalert" style="display:none" class="alert alert-danger">
+                <div id="signupalert" style="display: none;" class="alert alert-danger">
                     <p>{{ trans('content.Error') }}:</p>
                     <span></span>
                 </div>
@@ -47,7 +44,7 @@
     
                 <div class="form-group">
                     <div class="col-md-12 control">
-                        <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+                        <div style="border-top: 1px solid #888; padding-top: 15px; font-size: 85%" >
                             {{ trans('content.Don\'t have an account!') }}
                             <a data-toggle="modal" data-target="#mySignup" data-dismiss="modal">
                             {{ trans('content.Sign Up here') }}
