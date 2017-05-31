@@ -27,7 +27,7 @@
                 <div class="input-group">
                     <div class="checkbox">
                         <label>
-                            <input id="login-remember" type="checkbox" name="remember" value="1"> {{ trans('content.Remember me') }}
+                            <input id="login-remember" type="checkbox" name="remember" value="1"> <p style="padding-top: 3px;">{{ trans('content.Remember me') }}</p>
                         </label>
                     </div>
                 </div>
