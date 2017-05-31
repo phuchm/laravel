@@ -7,16 +7,16 @@
 
         <title>Laravel</title>
 
-        <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
-        <script src="js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="js/angular.min.js" type="text/javascript"></script>
-        <script src="js/myApp.js" type="text/javascript"></script>
-        <script src="js/employees.js" type="text/javascript"></script>
-        <script src="js/login.js" type="text/javascript"></script>
-
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
         <link href="css/main.css" rel="stylesheet" type="text/css">
+
+        <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
+        <script src="js/angular.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/myApp.js" type="text/javascript"></script>
+        <script src="js/employees.js" type="text/javascript"></script>
+        <script src="js/login.js" type="text/javascript"></script>
 
     </head>
     <body>

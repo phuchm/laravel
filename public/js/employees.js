@@ -1,4 +1,5 @@
 myApp.controller('employeeController', function($scope, $http) {
+    $scope.employees = []
     // Retrieve employees listing from API
     $scope.get = function() {
         $("#overlay-layer").show();
@@ -20,7 +21,7 @@ myApp.controller('employeeController', function($scope, $http) {
         });
     };
 
-    $scope.get();
+    // $scope.get();
 
     $scope.signUp = function() {
         $('#myLogin').modal('hide');

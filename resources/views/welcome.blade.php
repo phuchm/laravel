@@ -3,7 +3,6 @@
         <div ng-controller="employeeController" class="container">
             <div id="main">
             <h2>Employees Database</h2>
-
             <!-- Table-to-load-the-data Part -->
             <table class="table table-responsive table-hover">
                 <thead>
@@ -16,7 +15,7 @@
                         <th><button id="btn-add" class="btn btn-primary btn-xs" ng-click="toggle('add', 0)">Add New Employee</button></th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody ng-if="employees.length > 0">
                     <tr ng-repeat="employee in employees">
                         <td><% employee.id %></td>
                         <td><% employee.name %></td>
