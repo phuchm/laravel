@@ -50,20 +50,6 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="icode" class="col-md-3 control-label">{{ trans('content.Invitation Code') }}</label>
-                    <div class="col-md-9">
-                        <div
-                        vc-recaptcha
-                        theme="'light'"
-                        key="model.key"
-                        on-create="setWidgetId(widgetId)"
-                        on-success="setResponse(response)"
-                        on-expire="cbExpiration()"
-                        ></div>
-                    </div>
-                </div>
-
-                <div class="form-group">
                     <!-- Button -->
                     <div class="col-md-offset-3 col-md-9">
                         <button id="btn-signup" type="button" class="btn btn-info" ng-click="submit()"><i class="icon-hand-right"></i> &nbsp; {{ trans('content.SignUp') }}</button>
